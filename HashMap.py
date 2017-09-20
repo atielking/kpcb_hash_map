@@ -10,10 +10,23 @@ class HashMap:
         self.hashMapSize = size
         self.hashMap = [(None, None)] * self.hashMapSize
     def set(self, key, value):
+        '''
+        This function stores the given key/value pair in the hash map. It
+        returns a Boolean indicating whether the operation was successful.
+        '''
 
     def get(self, key):
+        '''
+        This function returns the value associated with the given key, or
+        it returns null if the key cannot be found.
+        '''
 
     def delete(self, key):
+        '''
+        This function deletes the value associated with a given key. It
+        returns the value if the operation is successful, or null if the
+        key has no value.
+        '''
 
     def load(self):
         '''
