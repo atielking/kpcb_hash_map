@@ -1,8 +1,8 @@
 '''
 This fixed-size hash map associates string keys
 with arbitrary data object references using only primitive types.
-Author - Allison Tielking
 '''
+__author__ = "Allison Tielking"
 
 from math import ceil, log
 

@@ -1,3 +1,9 @@
+'''
+This is the unit testing class for HashMap.
+'''
+__author__ = "Allison Tielking"
+
+
 from HashMap import HashMap
 import unittest
 
@@ -47,7 +53,7 @@ class HashMapTest(unittest.TestCase):
         hm.set("keyTest1", "valTest2")
         self.assertIs(hm.get("keyTest1"), "valTest2")
 
-    def testValueDeletedNotNull(self): 
+    def testValueDeletedNotNull(self):
         hm = HashMap(10)
         hm.set("keyTest1", "valTest1")
         hm.delete("keyTest1")
