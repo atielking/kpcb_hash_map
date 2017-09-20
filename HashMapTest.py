@@ -5,6 +5,7 @@ class HashMapTest(unittest.TestCase):
     def testHashMapInit(self):
         hm = HashMap(3)
         self.assertTrue(hm)
+
     def testIncorrectSize(self):
         self.assertRaises(ValueError, HashMap, 0)
 
@@ -46,7 +47,7 @@ class HashMapTest(unittest.TestCase):
         hm.set("keyTest1", "valTest2")
         self.assertIs(hm.get("keyTest1"), "valTest2")
 
-    def testValueDeletedNotNull(self):
+    def testValueDeletedNotNull(self): 
         hm = HashMap(10)
         hm.set("keyTest1", "valTest1")
         hm.delete("keyTest1")
