@@ -1,5 +1,6 @@
-# Running the Tests
-Run "python HashMapTest.py" to run the unit tests for my code.
+# Running the Code
+Run HashMap: python HashMap.py
+Run HashMapTest: python HashMapTest.py
 
 # kpcb_hash_map
 Problem:
