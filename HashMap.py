@@ -6,15 +6,33 @@ Author - Allison Tielking
 
 class HashMap:
     def __init__(self, size):
+        if not isinstance(size, int):
+            raise TypeError("Size parameter must be of type int.")
+        if size < 1:
+            raise ValueError("HashMap must have a size of at least 1.")
         self.itemCount = 0
         self.hashMapSize = size
-        self.hashMap = [(None, None)] * self.hashMapSize
+        self.buckets = int(pow(2, ceil(log(size, 2))))
+        self.hashMap = [[] for item in xrange(buckets)]
+
     def set(self, key, value):
         '''
         This function stores the given key/value pair in the hash map. It
         returns a Boolean indicating whether the operation was successful.
         '''
-
+        if self.itemCount == self.hashMapSize: return False #hashmap has reached capacity
+        else:
+            position = key.__hash__() % self.buckets
+            bucket = self.hashMap[position] #gets hash index for key
+            for index, (k, val) in enumerate(bucket): #searches for key in bucket list
+                if k == key: #overwrites if key already in bucket
+                    bucket[index] = (key, value)
+                    return True
+            #key not in map yet
+            self.itemCount += 1
+            bucket.append((key, value))
+            return True
+            
     def get(self, key):
         '''
         This function returns the value associated with the given key, or
