@@ -1,4 +1,4 @@
-# Running the Tests:
+# Running the Tests
 Run "python HashMapTest.py" to run the unit tests for my code.
 
 # kpcb_hash_map
