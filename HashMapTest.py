@@ -4,7 +4,7 @@ import unittest
 class HashMapTest(unittest.TestCase):
     def testHashMapInit(self):
         hm = HashMap(3)
-        self.failUnless(hm)
+        self.assertTrue(hm)
     def testIncorrectSize(self):
         self.assertRaises(ValueError, HashMap, 0)
 
@@ -17,14 +17,14 @@ class HashMapTest(unittest.TestCase):
 
     def testSetOverwriteElement(self):
         hm = HashMap(10)
-        h.set("keyTest1," "valTest1")
-        self.assertTrue(h.set("keyTest1", "valTest3"))
+        hm.set("keyTest1,", "valTest1")
+        self.assertTrue(hm.set("keyTest1", "valTest3"))
 
     def testSetFull(self):
         hm = HashMap(2)
-        h.set("keyTest1," "valTest1")
-        h.set("keyTest2", "valTest2")
-        self.assertFalse(h.set("keyTest3", "valTest3"))
+        hm.set("keyTest1", "valTest1")
+        hm.set("keyTest2", "valTest2")
+        self.assertFalse(hm.set("keyTest3", "valTest3"))
 
     def testGetElementInMap(self):
         hm = HashMap(10)
@@ -38,13 +38,13 @@ class HashMapTest(unittest.TestCase):
     def testKeyHasValue(self):
         hm = HashMap(10)
         hm.set("keyTest1", "valTest1")
-        self.assertIs(hm.get("keyTest1", "valTest1"))
+        self.assertIs(hm.get("keyTest1"), "valTest1")
 
     def testValueOverwritten(self):
         hm = HashMap(10)
         hm.set("keyTest1", "valTest1")
         hm.set("keyTest1", "valTest2")
-        self.assertIs(hm.get("keyTest1", "valTest2"))
+        self.assertIs(hm.get("keyTest1"), "valTest2")
 
     def testValueDeletedNotNull(self):
         hm = HashMap(10)
@@ -65,3 +65,6 @@ class HashMapTest(unittest.TestCase):
         hm = HashMap(10)
         hm.set("keyTest1", "valTest1")
         self.assertEqual(hm.load(), 0.1)
+
+if __name__ == '__main__':
+    unittest.main()

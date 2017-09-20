@@ -15,7 +15,7 @@ class HashMap:
         self.itemCount = 0
         self.hashMapSize = size
         self.buckets = int(pow(2, ceil(log(size, 2))))
-        self.hashMap = [[] for item in xrange(buckets)]
+        self.hashMap = [[] for item in range(self.buckets)]
 
     def set(self, key, value):
         '''
